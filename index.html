@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>KINGFOOD - Artisanal Wood-Fired Sourdough Pizzeria | Bhopal</title>
+  <meta name="description" content="KINGFOOD is Bhopal's premier artisanal wood-fired pizzeria and dining atelier. Handcrafted 48-hour fermented sourdough, farm-fresh ingredients, and curated natural craft drinks.">
+  <meta name="theme-color" content="#B8220A">
+
+  <!-- Tailwind CSS CDN with plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- FontAwesome 6 Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Google Fonts: Montserrat, Oswald, Space Grotesk, Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Oswald:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#B8220A',
+              darkred: '#991B06',
+              yellow: '#FFC107',
+              yellowHover: '#E0A800',
+              cream: '#ECE3D4',
+              creamDark: '#DFD5C6',
+              dark: '#111113',
+              darker: '#0B0B0C',
+              cardDark: '#171719',
+              moss: '#5B6B4C',
+              terracotta: '#C85A32'
+            }
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'Plus Jakarta Sans', 'sans-serif'],
+            display: ['Oswald', 'Space Grotesk', 'sans-serif'],
+            editorial: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Typography & Special Effects -->
+  <style>
+    /* Hollow & Outlined Vintage Inline Heading matching reference design */
+    .font-outline-header {
+      color: transparent;
+      -webkit-text-stroke: 1.5px #1E1B18;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.04);
+    }
+    
+    .font-outline-white {
+      color: transparent;
+      -webkit-text-stroke: 1.8px #FFFFFF;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Sawtooth Starburst Badge Effect matching reference design */
+    .burst-badge {
+      clip-path: polygon(
+        50% 0%, 63% 13%, 81% 6%, 86% 23%, 100% 27%, 95% 45%, 100% 61%, 88% 71%, 90% 89%, 72% 87%, 
+        60% 100%, 46% 91%, 31% 99%, 24% 83%, 7% 84%, 12% 66%, 0% 55%, 10% 41%, 3% 24%, 21% 21%, 23% 4%, 40% 11%
+      );
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .burst-badge:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    /* Crisp Jagged Torn Paper Dividers matching screenshot */
+    .torn-paper-bottom {
+      position: relative;
+    }
+    .torn-paper-bottom::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 28px;
+      background-repeat: repeat-x;
+      background-size: 80px 28px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath fill='%23ECE3D4' d='M0,0 C150,35 250,5 400,28 C550,45 650,10 800,32 C950,48 1050,12 1200,25 L1200,40 L0,40 Z'%3E%3C/path%3E%3C/svg%3E");
+      z-index: 20;
+    }
+
+    .torn-paper-dark-top {
+      position: relative;
+    }
+    .torn-paper-dark-top::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      height: 28px;
+      background-repeat: repeat-x;
+      background-size: 80px 28px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath fill='%23111113' d='M0,40 C120,5 280,35 420,12 C580,38 720,8 880,30 C1020,10 1140,32 1200,15 L1200,0 L0,0 Z'%3E%3C/path%3E%3C/svg%3E");
+      z-index: 20;
+    }
+
+    .torn-paper-dark-bottom {
+      position: relative;
+    }
+    .torn-paper-dark-bottom::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 28px;
+      background-repeat: repeat-x;
+      background-size: 80px 28px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath fill='%23ECE3D4' d='M0,0 C180,36 320,8 500,32 C680,48 780,10 950,30 C1080,45 1150,15 1200,28 L1200,40 L0,40 Z'%3E%3C/path%3E%3C/svg%3E");
+      z-index: 20;
+    }
+
+    .torn-footer-top::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      height: 28px;
+      background-repeat: repeat-x;
+      background-size: 80px 28px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath fill='%230B0B0C' d='M0,40 C140,8 260,35 440,15 C600,38 740,6 900,30 C1040,12 1160,35 1200,18 L1200,0 L0,0 Z'%3E%3C/path%3E%3C/svg%3E");
+      z-index: 20;
+    }
+
+    /* Floating Topping Gentle Physics Animations */
+    @keyframes gentleFloat1 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(6deg); }
+    }
+    @keyframes gentleFloat2 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(-8deg); }
+    }
+    @keyframes gentleFloat3 {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-6px) scale(1.08); }
+    }
+    .float-item-1 { animation: gentleFloat1 4.5s ease-in-out infinite; }
+    .float-item-2 { animation: gentleFloat2 5.5s ease-in-out infinite 0.8s; }
+    .float-item-3 { animation: gentleFloat3 4.8s ease-in-out infinite 1.4s; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #ECE3D4;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #B8220A;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #991B06;
+    }
+
+    /* Dialog backdrop */
+    dialog::backdrop {
+      background: rgba(17, 17, 19, 0.75);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="bg-brand-cream text-gray-800 font-sans antialiased overflow-x-hidden selection:bg-brand-yellow selection:text-black min-h-screen flex flex-col">
+
+  <!-- TOP PROMO TICKER BAR -->
+  <div class="bg-brand-darker text-amber-200 py-1.5 px-3 sm:px-4 text-[11px] sm:text-xs font-semibold text-center tracking-wider border-b border-white/10 flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+    <span class="inline-flex items-center gap-1.5 bg-brand-red text-white text-[10px] uppercase font-black px-2 py-0.5 rounded-full animate-pulse flex-shrink-0">
+      <i class="fa-solid fa-fire"></i> Dine-In Atelier
+    </span>
+    <span class="text-center">🍕 <strong>WELCOME TO KINGFOOD:</strong> Authentic Wood-Fired Sourdough Atelier in Bhopal</span>
+    <span class="hidden md:inline text-white/40">|</span>
+    <span class="hidden md:inline text-white">Table Reservations &amp; Walk-ins Welcome</span>
+  </div>
+
+  <!-- BEGIN: MainHeader -->
+  <header class="bg-brand-red text-white py-3 sm:py-3.5 px-4 sm:px-6 md:px-8 lg:px-12 sticky top-0 z-50 transition duration-300 shadow-lg border-b border-red-800/40">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo (guaranteed never to shrink or collide with nav) -->
+      <a class="flex items-center gap-2.5 text-xl sm:text-2xl font-black tracking-wider uppercase group flex-shrink-0 mr-2 sm:mr-4" data-purpose="site-logo" href="#home">
+        <span class="text-brand-yellow text-2xl sm:text-3xl transform group-hover:rotate-12 transition-transform duration-300 drop-shadow">
+          <i class="fa-solid fa-crown"></i>
+        </span>
+        <span class="text-white tracking-wide">KING<span class="text-brand-yellow">FOOD</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu (Visible ONLY on lg: 1024px+ to ensure zero squishing) -->
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-xs uppercase font-extrabold tracking-widest text-amber-100 flex-shrink-0">
+        <a class="hover:text-brand-yellow text-white transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-brand-yellow whitespace-nowrap" href="#home">Home</a>
+        <a class="hover:text-brand-yellow transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-brand-yellow whitespace-nowrap" href="#about">About</a>
+        <a class="hover:text-brand-yellow transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-brand-yellow whitespace-nowrap" href="#popular">Popular</a>
+        <a class="hover:text-brand-yellow transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-brand-yellow whitespace-nowrap" href="#menu">Menu</a>
+        <a class="hover:text-brand-yellow transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-brand-yellow whitespace-nowrap" href="#reviews">Reviews</a>
+        <button onclick="openGalleryModal()" class="hover:text-brand-yellow transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-brand-yellow uppercase whitespace-nowrap font-extrabold">Gallery</button>
+      </nav>
+
+      <!-- Right Header Actions (Table Reservation & Phone Inquiry + Mobile Toggle) -->
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        
+        <!-- WhatsApp Quick Book Button -->
+        <a href="https://wa.me/919111111086?text=Hello!%20I%20would%20like%20to%20reserve%20a%20table%20for%20dining." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-black uppercase px-3 py-1.5 rounded-full shadow transition active:scale-95 flex-shrink-0" title="Book Table via WhatsApp">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span class="hidden md:inline">WhatsApp</span>
+          <span>9111111086</span>
+        </a>
+
+        <!-- Table Booking Action Button (Single line, flex-shrink-0) -->
+        <button onclick="openReserveModal()" class="flex items-center gap-2 sm:gap-2.5 group flex-shrink-0 whitespace-nowrap bg-black/20 hover:bg-black/30 px-2.5 sm:px-3 py-1.5 rounded-full border border-white/15 transition shadow-sm" title="Reserve a Table">
+          <span class="w-8 h-8 rounded-full bg-brand-yellow text-brand-darkred flex items-center justify-center text-sm shadow group-hover:scale-105 group-hover:bg-amber-400 transition-transform flex-shrink-0">
+            <i class="fa-solid fa-calendar-check"></i>
+          </span>
+          <div class="text-left leading-tight hidden lg:block">
+            <span class="text-[9px] block text-amber-200 uppercase font-black tracking-wider">Book a Table</span>
+            <span class="text-xs font-black text-white tracking-wide group-hover:text-brand-yellow transition-colors whitespace-nowrap">+91 91111 11086</span>
+          </div>
+        </button>
+
+        <!-- Mobile & Tablet Hamburger Toggle (Visible on < 1024px) -->
+        <button onclick="toggleMobileNav()" class="lg:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-black/20 hover:bg-black/30 border border-white/20 text-white flex items-center justify-center text-lg focus:outline-none transition active:scale-95 flex-shrink-0" aria-label="Toggle navigation menu" id="mobileMenuBtn">
+          <i id="mobileMenuIcon" class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Responsive Mobile & Tablet Drawer (Overlay Backdrop + Slide-in Drawer) -->
+    <div id="mobileNavBackdrop" onclick="toggleMobileNav()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 hidden lg:hidden transition-opacity duration-300"></div>
+
+    <div id="mobileNav" class="fixed top-0 right-0 w-[85%] max-w-sm h-full bg-brand-dark text-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-neutral-800 lg:hidden overflow-y-auto">
+      <!-- Drawer Header -->
+      <div class="p-5 border-b border-neutral-800 flex items-center justify-between bg-neutral-900/90">
+        <div class="flex items-center gap-2">
+          <span class="text-brand-yellow text-xl"><i class="fa-solid fa-crown"></i></span>
+          <span class="font-black text-lg text-white uppercase tracking-wider">KING<span class="text-brand-yellow">FOOD</span></span>
+        </div>
+        <button onclick="toggleMobileNav()" class="w-8 h-8 rounded-full bg-neutral-800 text-gray-400 hover:text-white flex items-center justify-center text-lg transition" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Quick Action: Table Booking in drawer -->
+      <div class="p-4 bg-brand-red/20 border-b border-neutral-800 space-y-2">
+        <span class="text-[10px] font-black uppercase text-amber-300 tracking-wider block">Table Reservations &amp; Inquiry:</span>
+        <a href="https://wa.me/919111111086?text=Hello!%20I%20would%20like%20to%20reserve%20a%20table%20at%20Pizza%20Peddler%20Karond%20Bhopal." target="_blank" rel="noopener noreferrer" class="w-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-black uppercase py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 shadow transition active:scale-95">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>Book on WhatsApp: 9111111086</span>
+        </a>
+        <button onclick="toggleMobileNav(); openReserveModal();" class="w-full bg-brand-yellow hover:bg-brand-yellowHover text-black text-xs font-black uppercase py-2 px-3 rounded-lg flex items-center justify-center gap-2 shadow">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Table Reservation Form</span>
+        </button>
+        <a href="tel:+919111111086" class="w-full bg-neutral-800 hover:bg-neutral-700 text-white text-xs font-bold uppercase py-2 px-3 rounded-lg flex items-center justify-center gap-2 border border-neutral-700">
+          <i class="fa-solid fa-phone text-brand-yellow"></i>
+          <span>Call: +91 91111 11086</span>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex-1 p-5 space-y-1 text-sm font-bold uppercase tracking-wider">
+        <a onclick="toggleMobileNav()" href="#home" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-neutral-800 text-white hover:text-brand-yellow transition">
+          <i class="fa-solid fa-house text-brand-yellow w-5 text-center"></i> Home
+        </a>
+        <a onclick="toggleMobileNav()" href="#about" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-neutral-800 text-white hover:text-brand-yellow transition">
+          <i class="fa-solid fa-wheat-awn text-brand-yellow w-5 text-center"></i> About Our Crust
+        </a>
+        <a onclick="toggleMobileNav()" href="#popular" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-neutral-800 text-white hover:text-brand-yellow transition">
+          <i class="fa-solid fa-fire text-brand-yellow w-5 text-center"></i> Popular Pizzas
+        </a>
+        <a onclick="toggleMobileNav()" href="#menu" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-neutral-800 text-white hover:text-brand-yellow transition">
+          <i class="fa-solid fa-pizza-slice text-brand-yellow w-5 text-center"></i> Pizzas &amp; Drinks Menu
+        </a>
+        <a onclick="toggleMobileNav()" href="#reviews" class="flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-neutral-800 text-white hover:text-brand-yellow transition">
+          <i class="fa-solid fa-star text-brand-yellow w-5 text-center"></i> Google Reviews (5.0★)
+        </a>
+        <button onclick="toggleMobileNav(); openGalleryModal();" class="w-full flex items-center gap-3 py-3 px-3 rounded-lg hover:bg-neutral-800 text-white hover:text-brand-yellow transition uppercase text-left">
+          <i class="fa-solid fa-images text-brand-yellow w-5 text-center"></i> Kitchen Gallery
+        </button>
+      </nav>
+
+      <!-- Drawer Footer -->
+      <div class="p-5 border-t border-neutral-800 bg-neutral-900/90 text-xs text-gray-400 space-y-2">
+        <div class="flex items-center gap-2 text-green-400 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+          Wood Oven Fired &bull; Open for Dine-In
+        </div>
+        <p class="text-[11px] text-gray-500">Murli Nagar, Karond, Bhopal, MP 462038</p>
+        <a href="https://maps.app.goo.gl/VypVAhTxhDHVCJaW6?g_st=aw" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-brand-yellow hover:underline text-[11px] font-bold">
+          <i class="fa-solid fa-map-location-dot"></i> View on Google Maps
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- END: MainHeader -->
+
+  <!-- BEGIN: HeroSection -->
+  <section class="relative bg-brand-red text-white pt-8 pb-24 sm:pb-28 md:pt-14 md:pb-36 overflow-hidden torn-paper-bottom" data-purpose="hero-banner" id="home">
+    
+    <div class="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+      
+      <!-- Hero Texts -->
+      <div class="md:col-span-6 space-y-5 text-center md:text-left">
+        
+        <div class="inline-flex items-center gap-2 bg-amber-400/20 text-amber-200 text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-amber-300/30">
+          <i class="fa-solid fa-fire text-amber-400"></i> Wood-Fired Sourdough Hearth
+        </div>
+
+        <div class="space-y-1">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight drop-shadow-sm">
+            The Best Pizza<br>
+            <span class="font-outline-white text-5xl sm:text-6xl lg:text-7xl">In Bhopal</span>
+          </h1>
+        </div>
+
+        <div class="text-xs sm:text-sm text-red-100 font-medium space-y-1.5 max-w-lg mx-auto md:mx-0">
+          <p class="opacity-95 font-semibold text-amber-200 flex items-center justify-center md:justify-start gap-1.5">
+            <i class="fa-solid fa-star text-xs text-brand-yellow"></i> Special Tasting Sessions Every Friday
+          </p>
+          <p class="font-bold text-white text-sm sm:text-base tracking-wide bg-black/20 py-1.5 px-3 rounded-lg inline-block border border-white/10">
+            ✨ Handcrafted Sourdough • Intimate Dine-In Experience
+          </p>
+        </div>
+
+        <div class="pt-3 flex flex-wrap items-center justify-center md:justify-start gap-3.5">
+          <a class="inline-flex items-center gap-2.5 bg-brand-yellow hover:bg-brand-yellowHover text-black text-xs font-black uppercase px-7 py-4 rounded-md shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 tracking-wider" href="#menu">
+            <i class="fa-solid fa-book-open text-sm"></i>
+            Explore Menu
+          </a>
+          <button onclick="openReserveModal()" class="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white text-xs font-extrabold uppercase px-5 py-4 rounded-md border border-white/40 hover:border-white transition tracking-wider">
+            <i class="fa-solid fa-calendar-check text-brand-yellow"></i>
+            Book a Table
+          </button>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="pt-2 flex items-center justify-center md:justify-start gap-5 text-xs text-amber-100/80">
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-fire text-brand-yellow"></i> 900°F Wood Oven</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-wheat-awn text-brand-yellow"></i> 48hr Cold Ferment</span>
+        </div>
+
+      </div>
+
+      <!-- Hero Visuals: Floating Ingredients & Whole Pizza Showcase -->
+      <div class="md:col-span-6 relative flex flex-col items-center justify-center mt-6 md:mt-0">
+        
+        <!-- Floating Toppings Elements (Doodles & Graphic Accents matching mockup) -->
+        <div class="relative w-full max-w-md h-52 sm:h-64 pointer-events-none select-none">
+          <!-- Cheese wedge -->
+          <div class="absolute top-2 left-6 text-brand-yellow text-3xl sm:text-4xl float-item-1 drop-shadow">
+            <i class="fa-solid fa-cheese"></i>
+          </div>
+          <!-- Pepper slice -->
+          <div class="absolute top-8 left-28 text-lime-400 text-2xl rotate-45 float-item-2 drop-shadow">
+            <i class="fa-solid fa-ring"></i>
+          </div>
+          <!-- Prosciutto / Bacon -->
+          <div class="absolute top-4 right-20 text-rose-300 text-3xl -rotate-12 float-item-3 drop-shadow">
+            <i class="fa-solid fa-bacon"></i>
+          </div>
+          <!-- Basil Leaf -->
+          <div class="absolute top-10 right-4 text-emerald-400 text-2xl rotate-45 float-item-1 drop-shadow">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <!-- Cutlery / Fork & Knife -->
+          <div class="absolute top-20 left-16 text-stone-200 text-2xl rotate-12 float-item-2 drop-shadow">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <!-- Tomato slice -->
+          <div class="absolute bottom-16 left-10 text-red-400 text-3xl float-item-3 drop-shadow">
+            <i class="fa-solid fa-circle-dot"></i>
+          </div>
+          <!-- Red Pepper Flakes / Spice -->
+          <div class="absolute bottom-24 right-24 text-red-300 text-2xl float-item-1 drop-shadow">
+            <i class="fa-solid fa-fire"></i>
+          </div>
+          <!-- Parmesan Chunk -->
+          <div class="absolute top-24 right-8 text-amber-200 text-3xl rotate-45 float-item-2 drop-shadow">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <!-- Salami slice -->
+          <div class="absolute bottom-10 right-14 text-rose-400 text-2xl rotate-12 float-item-3 drop-shadow">
+            <i class="fa-solid fa-circle"></i>
+          </div>
+        </div>
+
+        <!-- Whole Pizza Showcase matching screen.png -->
+        <div class="relative z-10 w-full max-w-sm sm:max-w-md -mt-16 transform hover:scale-105 transition-transform duration-500 cursor-pointer" onclick="openDishDetail('Paneer Tikka Pizza', '&#8377;160', 'Our star dish — tandoori-marinated paneer cubes, roasted onions &amp; capsicum on a rich tomato base, loaded with mozzarella, baked in our wood-fired oven.')">
+          <div class="relative rounded-full overflow-hidden border-4 border-amber-900/40 shadow-[0_20px_45px_rgba(0,0,0,0.65)] group">
+            <img alt="The Best Wood-Fired Artisan Pizza In Town" class="w-full h-auto object-cover transform group-hover:rotate-3 transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4LHVtsvcUCc292r2OjR1ePRlRBEfIz6TC9hcTKpFtyFinCGReAKuVXkTe7EDOC8EWyJNs4PUhaBC5SSHGnZYyU0K_9wRnh_P-0qKgc3mdB37X3w97vVT23CsY2rBUhKEC3QfZjl8hyTxjrDSBqTwh3ytlKHJhXODRG_OOkpbluznwvDU6MgbB9C8Zvj25yyy1dc_dm9aaon0744RnLptlYct2pRZ_0pPWpP9JOL8f8GTovE0rRqRO0Q">
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="bg-brand-yellow text-black font-black text-xs uppercase px-4 py-2 rounded-full shadow-lg">
+                <i class="fa-solid fa-eye mr-1"></i> View Dish Details
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- END: HeroSection -->
+
+  <!-- BEGIN: About / Sourdough Atelier Story -->
+  <section class="py-12 px-6 md:px-12 bg-brand-cream border-b border-stone-300/60" id="about">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+      <div class="flex items-start gap-4 p-4 rounded-lg bg-[#FAF6EE] border border-stone-300/70 shadow-sm">
+        <div class="w-12 h-12 rounded-full bg-brand-red text-white flex items-center justify-center text-xl shrink-0">
+          <i class="fa-solid fa-fire-burner"></i>
+        </div>
+        <div>
+          <h3 class="font-extrabold text-gray-900 text-sm uppercase tracking-wide">48-Hour Cold Fermentation</h3>
+          <p class="text-xs text-gray-600 mt-1 leading-relaxed">Airy, blistered crusts made with 100% organic Italian flour for optimal lightness and digestibility.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-lg bg-[#FAF6EE] border border-stone-300/70 shadow-sm">
+        <div class="w-12 h-12 rounded-full bg-brand-yellow text-black flex items-center justify-center text-xl shrink-0">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+        <div>
+          <h3 class="font-extrabold text-gray-900 text-sm uppercase tracking-wide">Farm-To-Table Ingredients</h3>
+          <p class="text-xs text-gray-600 mt-1 leading-relaxed">San Marzano tomatoes, artisanal fior di latte mozzarella, and cold-pressed extra virgin olive oil.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 rounded-lg bg-[#FAF6EE] border border-stone-300/70 shadow-sm">
+        <div class="w-12 h-12 rounded-full bg-stone-900 text-brand-yellow flex items-center justify-center text-xl shrink-0">
+          <i class="fa-solid fa-champagne-glasses"></i>
+        </div>
+        <div>
+          <h3 class="font-extrabold text-gray-900 text-sm uppercase tracking-wide">Intimate Dining Ambience</h3>
+          <p class="text-xs text-gray-600 mt-1 leading-relaxed">Candlelit travertine tables, curated vinyl listening bar, and an open wood-fired hearth kitchen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEGIN: PopularPizzas -->
+  <section class="py-16 px-6 md:px-12 bg-brand-cream relative" data-purpose="popular-pizzas" id="popular">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Section Heading with Outlined Font -->
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-brand-red block mb-1">Hand-Tossed Perfection</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-outline-header uppercase tracking-wider">
+          POPULAR PIZZAS
+        </h2>
+        <p class="text-xs text-gray-600 mt-1">Our guests' most requested wood-fired signature creations</p>
+      </div>
+
+      <!-- 6 Pizza Cards Grid matching screen.png -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 items-start">
+        
+        <!-- Pizza Item 1: Margherita -->
+        <div class="flex flex-col items-center text-center group bg-[#FAF6EE] p-3.5 rounded-xl border border-stone-300/80 shadow-sm hover:shadow-md transition">
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-md group-hover:scale-105 transition-transform duration-300 border-2 border-amber-900/30 bg-amber-100 cursor-pointer" onclick="openDishDetail('Margherita Pizza', '&#8377;120', 'Classic tomato sauce base, generous mozzarella cheese, fresh basil — a timeless favourite baked in our wood-fired oven.')">
+            <img alt="Margherita Pizza" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=400&q=80">
+          </div>
+          <h3 class="mt-3 font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Margherita</h3>
+          <span class="text-xs font-black text-brand-red mt-0.5">&#8377;120</span>
+          <button onclick="openDishDetail('Margherita Pizza', '&#8377;120', 'Classic tomato sauce base, generous mozzarella cheese, fresh basil — a timeless favourite baked in our wood-fired oven.')" class="mt-2 inline-flex items-center gap-1 bg-brand-yellow hover:bg-brand-yellowHover text-black text-[11px] font-bold px-3 py-1 rounded shadow-sm transition active:scale-95">
+            <i class="fa-solid fa-eye text-[10px]"></i> View
+          </button>
+        </div>
+
+        <!-- Pizza Item 2: Paneer Tikka -->
+        <div class="flex flex-col items-center text-center group bg-[#FAF6EE] p-3.5 rounded-xl border border-stone-300/80 shadow-sm hover:shadow-md transition">
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-md group-hover:scale-105 transition-transform duration-300 border-2 border-amber-900/30 bg-amber-100 cursor-pointer" onclick="openDishDetail('Paneer Tikka Pizza', '&#8377;160', 'Tandoori-marinated paneer cubes, onions, capsicum, tomato sauce, mozzarella — a desi twist on a wood-fired classic.')">
+            <img alt="Paneer Tikka Pizza" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=400&q=80">
+          </div>
+          <h3 class="mt-3 font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Paneer Tikka</h3>
+          <span class="text-xs font-black text-brand-red mt-0.5">&#8377;160</span>
+          <button onclick="openDishDetail('Paneer Tikka Pizza', '&#8377;160', 'Tandoori-marinated paneer cubes, onions, capsicum, tomato sauce, mozzarella — a desi twist on a wood-fired classic.')" class="mt-2 inline-flex items-center gap-1 bg-brand-yellow hover:bg-brand-yellowHover text-black text-[11px] font-bold px-3 py-1 rounded shadow-sm transition active:scale-95">
+            <i class="fa-solid fa-eye text-[10px]"></i> View
+          </button>
+        </div>
+
+        <!-- Pizza Item 3: Corn & Capsicum -->
+        <div class="flex flex-col items-center text-center group bg-[#FAF6EE] p-3.5 rounded-xl border border-stone-300/80 shadow-sm hover:shadow-md transition">
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-md group-hover:scale-105 transition-transform duration-300 border-2 border-amber-900/30 bg-amber-100 cursor-pointer" onclick="openDishDetail('Corn &amp; Capsicum Pizza', '&#8377;140', 'Sweet golden corn kernels, colourful tri-bell capsicum, creamy white sauce base, generous mozzarella.')">
+            <img alt="Corn and Capsicum Pizza" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80">
+          </div>
+          <h3 class="mt-3 font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Corn &amp; Capsicum</h3>
+          <span class="text-xs font-black text-brand-red mt-0.5">&#8377;140</span>
+          <button onclick="openDishDetail('Corn &amp; Capsicum Pizza', '&#8377;140', 'Sweet golden corn kernels, colourful tri-bell capsicum, creamy white sauce base, generous mozzarella.')" class="mt-2 inline-flex items-center gap-1 bg-brand-yellow hover:bg-brand-yellowHover text-black text-[11px] font-bold px-3 py-1 rounded shadow-sm transition active:scale-95">
+            <i class="fa-solid fa-eye text-[10px]"></i> View
+          </button>
+        </div>
+
+        <!-- Pizza Item 4: Veg Supreme -->
+        <div class="flex flex-col items-center text-center group bg-[#FAF6EE] p-3.5 rounded-xl border border-stone-300/80 shadow-sm hover:shadow-md transition">
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-md group-hover:scale-105 transition-transform duration-300 border-2 border-amber-900/30 bg-amber-100 cursor-pointer" onclick="openDishDetail('Veg Supreme Pizza', '&#8377;180', 'Our most loaded veggie pizza — mushroom, corn, capsicum, onion, olives, jalapeños, extra mozzarella.')">
+            <img alt="Veg Supreme Pizza" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=400&q=80">
+          </div>
+          <h3 class="mt-3 font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Veg Supreme</h3>
+          <span class="text-xs font-black text-brand-red mt-0.5">&#8377;180</span>
+          <button onclick="openDishDetail('Veg Supreme Pizza', '&#8377;180', 'Our most loaded veggie pizza — mushroom, corn, capsicum, onion, olives, jalapeños, extra mozzarella.')" class="mt-2 inline-flex items-center gap-1 bg-brand-yellow hover:bg-brand-yellowHover text-black text-[11px] font-bold px-3 py-1 rounded shadow-sm transition active:scale-95">
+            <i class="fa-solid fa-eye text-[10px]"></i> View
+          </button>
+        </div>
+
+        <!-- Pizza Item 5: Farmhouse -->
+        <div class="flex flex-col items-center text-center group bg-[#FAF6EE] p-3.5 rounded-xl border border-stone-300/80 shadow-sm hover:shadow-md transition">
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-md group-hover:scale-105 transition-transform duration-300 border-2 border-amber-900/30 bg-amber-100 cursor-pointer" onclick="openDishDetail('Farmhouse Pizza', '&#8377;150', 'Fresh mushrooms, onion, capsicum, tomato, olives on a rich tomato base — packed with garden-fresh goodness.')">
+            <img alt="Farmhouse Pizza" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80">
+          </div>
+          <h3 class="mt-3 font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Farmhouse</h3>
+          <span class="text-xs font-black text-brand-red mt-0.5">&#8377;150</span>
+          <button onclick="openDishDetail('Farmhouse Pizza', '&#8377;150', 'Fresh mushrooms, onion, capsicum, tomato, olives on a rich tomato base — packed with garden-fresh goodness.')" class="mt-2 inline-flex items-center gap-1 bg-brand-yellow hover:bg-brand-yellowHover text-black text-[11px] font-bold px-3 py-1 rounded shadow-sm transition active:scale-95">
+            <i class="fa-solid fa-eye text-[10px]"></i> View
+          </button>
+        </div>
+
+        <!-- Pizza Item 6: Double Cheese Margherita -->
+        <div class="flex flex-col items-center text-center group bg-[#FAF6EE] p-3.5 rounded-xl border border-stone-300/80 shadow-sm hover:shadow-md transition">
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-md group-hover:scale-105 transition-transform duration-300 border-2 border-amber-900/30 bg-amber-100 cursor-pointer" onclick="openDishDetail('Double Cheese Margherita', '&#8377;150', 'Our classic Margherita elevated with double mozzarella and a drizzle of herb-infused olive oil — irresistibly cheesy.')">
+            <img alt="Double Cheese Margherita" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=400&q=80">
+          </div>
+          <h3 class="mt-3 font-bold text-xs sm:text-sm text-gray-900 tracking-tight">Double Cheese</h3>
+          <span class="text-xs font-black text-brand-red mt-0.5">&#8377;150</span>
+          <button onclick="openDishDetail('Double Cheese Margherita', '&#8377;150', 'Our classic Margherita elevated with double mozzarella and a drizzle of herb-infused olive oil — irresistibly cheesy.')" class="mt-2 inline-flex items-center gap-1 bg-brand-yellow hover:bg-brand-yellowHover text-black text-[11px] font-bold px-3 py-1 rounded shadow-sm transition active:scale-95">
+            <i class="fa-solid fa-eye text-[10px]"></i> View
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- END: PopularPizzas -->
+
+  <!-- BEGIN: PromoOffers / Highlights -->
+  <section class="py-6 px-6 md:px-12 bg-brand-cream pb-16" data-purpose="promotions-grid">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6">
+      
+      <!-- Left Column (Two Stacked Cards) -->
+      <div class="md:col-span-6 flex flex-col gap-6">
+        
+        <!-- Top Left Card: Most Popular Paneer Tikka -->
+        <div class="bg-brand-dark rounded-xl p-6 text-white relative overflow-hidden h-64 flex flex-col justify-between shadow-xl group border border-neutral-800">
+          <div class="relative z-10">
+            <span class="text-[10px] font-bold tracking-widest text-amber-400 uppercase">Chef's Signature</span>
+            <h3 class="text-xl sm:text-2xl font-black uppercase text-white mt-1">Paneer Tikka Pizza</h3>
+            <p class="text-xs text-gray-400 mt-0.5">Tandoori paneer, capsicum, onion &amp; smoky mozzarella</p>
+          </div>
+          
+          <!-- Red Starburst Badge -->
+          <div class="absolute bottom-6 left-6 z-20 burst-badge bg-brand-red w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg cursor-pointer" onclick="openDishDetail('Paneer Tikka Pizza', '&#8377;160', 'Tandoori-marinated paneer cubes, roasted onions &amp; capsicum on a rich tomato base, loaded with mozzarella.')">
+            <span class="text-[9px] font-bold uppercase leading-none text-amber-200">From</span>
+            <span class="text-xs font-black leading-tight text-white">&#8377;160</span>
+          </div>
+
+          <!-- Cut Pizza Image on Right -->
+          <div class="absolute -right-10 -bottom-10 w-64 h-64 pointer-events-none group-hover:scale-105 transition-transform duration-500">
+            <img alt="Paneer Tikka Pizza showcase" class="w-full h-full object-cover rounded-full transform -rotate-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmBzrLawwcdRAK0tDNPV_9PbRUW7VGXQ-OP9-6qJZwtTAkWiHQ36JCdTDG3W92HSQn9mC2vtygZhUl_MlwzvdAgqlU78oTlEEbl-9Mm1cRI6_tUncdoKH_j_Rg4eHgHToECuI0Atja-QjKzvqAMMTykb1T8Pwgq_2s8_O0djZyaK8VGCdMa5C1XXeytjVgvIJaKu5lHoAAQr5KSPD3U3nJKWTyC7tLMvxYe6ihpuYbLq8-a9vonG_nng">
+          </div>
+
+          <div class="relative z-10 self-start ml-20">
+            <button onclick="openDishDetail('Paneer Tikka Pizza', '&#8377;160', 'Our star dish — tandoori-marinated paneer cubes, roasted onions &amp; capsicum on a rich tomato base, loaded with mozzarella, baked in our wood-fired oven.')" class="bg-brand-yellow hover:bg-brand-yellowHover text-black text-[11px] font-black uppercase px-3 py-1.5 rounded shadow">
+              Discover Craft
+            </button>
+          </div>
+        </div>
+
+        <!-- Bottom Left Card: Cozy Dining Atmosphere -->
+        <div class="bg-brand-dark rounded-xl p-6 text-white relative overflow-hidden h-64 flex flex-col justify-between shadow-xl group border border-neutral-800">
+          <div class="relative z-10">
+            <span class="text-[10px] font-bold tracking-widest text-amber-400 uppercase">Dining Room</span>
+            <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-white mt-1">Warm Atelier Experience</h3>
+            <p class="text-xs text-amber-300 font-semibold mt-0.5">Live wood-fired hearth &amp; vinyl music</p>
+            <p class="text-[11px] text-gray-400">Cozy seating in Murli Nagar, Karond</p>
+          </div>
+
+          <!-- Red Starburst Badge -->
+          <div class="absolute bottom-6 right-6 z-20 burst-badge bg-brand-red w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg">
+            <span class="text-[9px] font-bold uppercase leading-none text-amber-200">Daily</span>
+            <span class="text-xs font-black leading-tight text-white">Dine In</span>
+          </div>
+
+          <!-- Hearth & Table setting photo -->
+          <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-48 pointer-events-none flex items-end justify-center">
+            <img alt="Atelier dining room setting" class="w-40 h-40 object-cover rounded-t-full shadow-lg border-b-0 border-2 border-stone-800 group-hover:scale-105 transition-transform" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80">
+          </div>
+
+          <div class="relative z-10 self-start">
+            <button onclick="openReserveModal()" class="bg-white/10 hover:bg-white/20 text-white text-[11px] font-bold uppercase px-3 py-1.5 rounded border border-white/20">
+              Book a Table
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Pizza Friday Special Offers (Tall Card) -->
+      <div class="md:col-span-6 bg-brand-dark rounded-xl p-8 text-white relative overflow-hidden flex flex-col justify-between min-h-[536px] shadow-xl border border-neutral-800 group">
+        
+        <div class="relative z-10">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold tracking-widest text-amber-400 uppercase bg-amber-400/10 px-2.5 py-0.5 rounded-full border border-amber-400/20">Pizza Friday Special</span>
+            <span class="text-xs text-amber-300 font-bold"><i class="fa-solid fa-music mr-1"></i> Live Vinyl Sessions</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black uppercase text-white tracking-wide mt-2">Dine-In Tasting Nights</h3>
+          <p class="text-xs text-gray-300 mt-1 max-w-sm">Join us every Friday evening for rotating vinyl pressings, natural wine pairings, and our celebrated 1+1 artisanal pizza tasting special!</p>
+        </div>
+
+        <!-- Sawtooth 1+1 FREE Badge -->
+        <div class="absolute bottom-8 right-8 z-20 burst-badge bg-brand-red w-20 h-20 sm:w-24 sm:h-24 flex flex-col items-center justify-center text-center shadow-2xl cursor-pointer" onclick="openReserveModal()">
+          <span class="text-base sm:text-lg font-black text-white leading-none">1+1</span>
+          <span class="text-[10px] sm:text-xs font-extrabold uppercase text-amber-300 leading-tight">Friday</span>
+        </div>
+
+        <!-- Flying Pizza Slice with floating veggies -->
+        <div class="relative w-full h-80 flex items-center justify-center">
+          <span class="absolute top-4 left-10 text-emerald-400 text-xl rotate-12 float-item-1"><i class="fa-solid fa-leaf"></i></span>
+          <span class="absolute top-10 right-12 text-red-500 text-lg float-item-2"><i class="fa-solid fa-circle"></i></span>
+          <span class="absolute bottom-12 left-16 text-black bg-stone-800 rounded-full w-4 h-4 inline-block float-item-3"></span>
+          <img alt="Pizza Friday Special Slice" class="w-72 sm:w-80 h-72 sm:h-80 object-cover rounded-full shadow-2xl transform -rotate-45 group-hover:rotate-0 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm-04HUbkumCmIuJXt-U6B2Rl6Rr0MWZ7uotpRfgOEzlrO9CYhS_bEsJa-5fxyDT1ul9N5dsrewV1IBa0KQyF-GC3mbw0ctUbtO6WDBcUiO1bbpvRZbsVc3wZ4zsFo_RN1Z-IgHofabsulkdCaaUoN2py3Tp0vRzBn6P6W0HrFKSRQpij81JDsLUKTbrDVbvBRxfE3j8T2DzX8A5Mn6R20Y__iZSPJj1lnfNrnBasmcNajhVbvY8S9MA">
+        </div>
+
+        <div class="relative z-10">
+          <button onclick="openReserveModal()" class="bg-brand-yellow hover:bg-brand-yellowHover text-black text-xs font-black uppercase px-6 py-3.5 rounded shadow-lg transition active:scale-95">
+            Reserve Friday Table <i class="fa-solid fa-arrow-right ml-1"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- END: PromoOffers -->
+
+  <!-- BEGIN: MenuSection (Dark Charcoal Background) -->
+  <section class="bg-brand-dark text-white pt-16 pb-20 px-6 md:px-12 torn-paper-dark-top torn-paper-dark-bottom relative" data-purpose="pizzas-and-drinks-menu" id="menu">
+    <div class="max-w-6xl mx-auto relative z-10">
+      
+      <!-- Section Title -->
+      <div class="text-center mb-8">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-brand-yellow block mb-1">Authentic Italian Atelier</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-outline-white uppercase tracking-wider">
+          PIZZAS &amp; DRINKS
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-400 mt-2 max-w-md mx-auto">Crafted with 48h sourdough and paired with refreshing sodas, house tonics &amp; craft beverages.</p>
+      </div>
+
+      <!-- Menu Category Filters & Search -->
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-neutral-800">
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 max-w-full">
+          <button onclick="filterMenu('all')" class="menu-tab-btn active bg-brand-yellow text-black text-xs font-black uppercase px-4 py-2 rounded-full transition" data-category="all">
+            All Items
+          </button>
+          <button onclick="filterMenu('pizza')" class="menu-tab-btn bg-neutral-800 hover:bg-neutral-700 text-gray-300 text-xs font-bold uppercase px-4 py-2 rounded-full transition" data-category="pizza">
+            Pizzas Only
+          </button>
+          <button onclick="filterMenu('drink')" class="menu-tab-btn bg-neutral-800 hover:bg-neutral-700 text-gray-300 text-xs font-bold uppercase px-4 py-2 rounded-full transition" data-category="drink">
+            Drinks &amp; Beverages
+          </button>
+        </div>
+        
+        <!-- Live Quick Search -->
+        <div class="relative w-full sm:w-64">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xs"></i>
+          <input id="menuSearchInput" oninput="searchMenu(this.value)" type="text" placeholder="Search menu..." class="w-full bg-neutral-900 border border-neutral-700 text-xs text-white rounded-full pl-8 pr-4 py-2 focus:outline-none focus:border-brand-yellow placeholder-gray-500">
+        </div>
+      </div>
+
+      <!-- Menu Grid: Classic Roster Layout (Clean Editorial Style, No Order Buttons) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12" id="menuContainers">
+        
+        <!-- Left Column: Pizzas -->
+        <div class="menu-category-box border-2 border-dashed border-neutral-700 rounded-xl p-6 sm:p-8 bg-neutral-900/70 backdrop-blur-sm" data-category-group="pizza">
+          <div class="flex items-center justify-between border-b border-neutral-800 pb-3 mb-6">
+            <h3 class="text-lg sm:text-xl font-black uppercase tracking-widest text-white flex items-center gap-2">
+              <i class="fa-solid fa-pizza-slice text-brand-yellow text-sm"></i> Wood-Fired Pizzas
+            </h3>
+            <span class="text-[11px] text-amber-200/70 font-semibold">12" Hand Tossed Sourdough</span>
+          </div>
+
+          <div class="space-y-4" id="pizzaItemList">
+            
+            <!-- Item 1 -->
+            <div class="menu-row flex items-center justify-between gap-4 pb-3.5 border-b border-neutral-800/80 hover:bg-white/5 p-2 rounded transition cursor-pointer" data-name="Margherita Pizza" onclick="openDishDetail('Margherita Pizza', '&#8377;120', 'Classic tomato sauce base, generous mozzarella cheese, fresh basil — a timeless favourite baked in our wood-fired oven.')">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Margherita Pizza</h4>
+                <p class="text-[11px] text-gray-400">Tomato sauce, mozzarella cheese, fresh basil.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;120</span>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="menu-row flex items-center justify-between gap-4 pb-3.5 border-b border-neutral-800/80 hover:bg-white/5 p-2 rounded transition cursor-pointer" data-name="Paneer Tikka Pizza" onclick="openDishDetail('Paneer Tikka Pizza', '&#8377;160', 'Tandoori-marinated paneer cubes, onions, capsicum, tomato sauce, mozzarella — a desi twist on a wood-fired classic.')">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Paneer Tikka Pizza</h4>
+                <p class="text-[11px] text-gray-400">Tandoori paneer, onion, capsicum, mozzarella.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;160</span>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="menu-row flex items-center justify-between gap-4 pb-3.5 border-b border-neutral-800/80 hover:bg-white/5 p-2 rounded transition cursor-pointer" data-name="Corn &amp; Capsicum Pizza" onclick="openDishDetail('Corn &amp; Capsicum Pizza', '&#8377;140', 'Sweet golden corn kernels, colourful tri-bell capsicum, creamy white sauce base, generous mozzarella.')">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Corn &amp; Capsicum Pizza</h4>
+                <p class="text-[11px] text-gray-400">Sweet corn, tri-colour capsicum, white sauce, mozzarella.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;140</span>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="menu-row flex items-center justify-between gap-4 pb-3.5 border-b border-neutral-800/80 hover:bg-white/5 p-2 rounded transition cursor-pointer" data-name="Farmhouse Pizza" onclick="openDishDetail('Farmhouse Pizza', '&#8377;150', 'Fresh mushrooms, onion, capsicum, tomato, olives on a rich tomato base — packed with garden-fresh goodness.')">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Farmhouse Pizza</h4>
+                <p class="text-[11px] text-gray-400">Mushroom, onion, capsicum, tomato, olives, mozzarella.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;150</span>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="menu-row flex items-center justify-between gap-4 pb-3.5 border-b border-neutral-800/80 hover:bg-white/5 p-2 rounded transition cursor-pointer" data-name="Veg Supreme Pizza" onclick="openDishDetail('Veg Supreme Pizza', '&#8377;180', 'Our most loaded veggie pizza — mushroom, corn, capsicum, onion, olives, jalapeños, extra mozzarella.')">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Veg Supreme Pizza</h4>
+                <p class="text-[11px] text-gray-400">Mushroom, corn, capsicum, onion, olive, jalapeño, extra cheese.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;180</span>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="menu-row flex items-center justify-between gap-4 pb-3.5 border-b border-neutral-800/80 hover:bg-white/5 p-2 rounded transition cursor-pointer" data-name="Peri Peri Paneer Pizza" onclick="openDishDetail('Peri Peri Paneer Pizza', '&#8377;170', 'Spicy peri peri sauce base, paneer chunks, red onion, capsicum, mozzarella — bold flavours with every bite.')">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Peri Peri Paneer Pizza</h4>
+                <p class="text-[11px] text-gray-400">Peri peri sauce, paneer, red onion, capsicum, mozzarella.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;170</span>
+              </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="menu-row flex items-center justify-between gap-4 hover:bg-white/5 p-2 rounded transition cursor-pointer" data-name="Double Cheese Margherita" onclick="openDishDetail('Double Cheese Margherita', '&#8377;150', 'Our classic Margherita elevated with double mozzarella and a drizzle of herb-infused olive oil — irresistibly cheesy.')">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Double Cheese Margherita</h4>
+                <p class="text-[11px] text-gray-400">Tomato sauce, double mozzarella, herb olive oil drizzle.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;150</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Drinks -->
+        <div class="menu-category-box border-2 border-dashed border-neutral-700 rounded-xl p-6 sm:p-8 bg-neutral-900/70 backdrop-blur-sm" data-category-group="drink">
+          <div class="flex items-center justify-between border-b border-neutral-800 pb-3 mb-6">
+            <h3 class="text-lg sm:text-xl font-black uppercase tracking-widest text-white flex items-center gap-2">
+              <i class="fa-solid fa-bottle-water text-brand-yellow text-sm"></i> Drinks &amp; Beverages
+            </h3>
+            <span class="text-[11px] text-amber-200/70 font-semibold">Ice Cold &amp; Hand-Crafted</span>
+          </div>
+
+          <div class="space-y-4" id="drinkItemList">
+            
+            <!-- Drink 1 -->
+            <div class="menu-row flex items-center justify-between gap-4 pb-3.5 border-b border-neutral-800/80 hover:bg-white/5 p-2 rounded transition" data-name="Cold Drink (Can)">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Cold Drink (Can)</h4>
+                <p class="text-[11px] text-gray-400">Pepsi / Coke / 7Up / Mirinda — chilled.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;40</span>
+              </div>
+            </div>
+
+            <!-- Drink 2 -->
+            <div class="menu-row flex items-center justify-between gap-4 pb-3.5 border-b border-neutral-800/80 hover:bg-white/5 p-2 rounded transition" data-name="Masala Chaas">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Masala Chaas</h4>
+                <p class="text-[11px] text-gray-400">Chilled buttermilk with jeera, mint &amp; black salt.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;50</span>
+              </div>
+            </div>
+
+            <!-- Drink 3 -->
+            <div class="menu-row flex items-center justify-between gap-4 pb-3.5 border-b border-neutral-800/80 hover:bg-white/5 p-2 rounded transition" data-name="Sweet Lassi">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Sweet Lassi</h4>
+                <p class="text-[11px] text-gray-400">Thick creamy yogurt blended with sugar &amp; rose.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;70</span>
+              </div>
+            </div>
+
+            <!-- Drink 4 -->
+            <div class="menu-row flex items-center justify-between gap-4 pb-3.5 border-b border-neutral-800/80 hover:bg-white/5 p-2 rounded transition" data-name="Fresh Lime Soda">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Fresh Lime Soda</h4>
+                <p class="text-[11px] text-gray-400">Freshly squeezed lime with soda — sweet or salted.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;60</span>
+              </div>
+            </div>
+
+            <!-- Drink 5 -->
+            <div class="menu-row flex items-center justify-between gap-4 pb-3.5 border-b border-neutral-800/80 hover:bg-white/5 p-2 rounded transition" data-name="Mango Shake">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Mango Shake</h4>
+                <p class="text-[11px] text-gray-400">Alphonso mango pulp blended with chilled milk.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;90</span>
+              </div>
+            </div>
+
+            <!-- Drink 6 -->
+            <div class="menu-row flex items-center justify-between gap-4 hover:bg-white/5 p-2 rounded transition" data-name="Mineral Water">
+              <div class="flex-1">
+                <h4 class="font-bold text-sm sm:text-base text-white">Mineral Water</h4>
+                <p class="text-[11px] text-gray-400">Chilled packaged drinking water bottle.</p>
+              </div>
+              <div class="text-right shrink-0">
+                <span class="text-base font-black text-brand-yellow">&#8377;20</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Centered Yellow CTA -->
+      <div class="text-center mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
+        <a href="https://wa.me/919111111086?text=Hello!%20I%20would%20like%20to%20book%20a%20table%20for%20dining%20at%20Pizza%20Peddler%20Karond%20Bhopal." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-black uppercase px-7 py-3.5 rounded shadow-lg transition active:scale-95">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Book on WhatsApp (9111111086)</span>
+        </a>
+        <button onclick="openReserveModal()" class="inline-flex items-center gap-2 bg-brand-yellow hover:bg-brand-yellowHover text-black text-xs font-black uppercase px-7 py-3.5 rounded shadow-lg transition active:scale-95">
+          <span>Table Reservation Form</span> <i class="fa-solid fa-calendar-check"></i>
+        </button>
+        <button onclick="openGalleryModal()" class="inline-flex items-center gap-2 bg-neutral-800 hover:bg-neutral-700 text-white text-xs font-bold uppercase px-6 py-3.5 rounded border border-neutral-700 transition">
+          <i class="fa-solid fa-images text-brand-yellow"></i> View Kitchen Gallery
+        </button>
+      </div>
+
+    </div>
+  </section>
+  <!-- END: MenuSection -->
+
+  <!-- BEGIN: CustomerReviews -->
+  <section class="py-20 px-6 md:px-12 bg-brand-cream relative" data-purpose="customer-reviews" id="reviews">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Heading & Google Maps Verified Rating Banner -->
+      <div class="text-center mb-10">
+        <!-- Google Maps 5.0 Star Badge -->
+        <div class="inline-flex items-center gap-2.5 bg-white border border-stone-300/80 px-4 py-1.5 rounded-full shadow-sm mb-3.5 flex-wrap justify-center">
+          <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span class="text-xs font-black text-gray-900 tracking-wide">5.0 Star Rating on Google Maps</span>
+          <div class="flex text-amber-500 text-xs">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <span class="text-gray-400">|</span>
+          <a href="https://maps.app.goo.gl/VypVAhTxhDHVCJaW6?g_st=aw" target="_blank" rel="noopener noreferrer" class="text-brand-red font-bold text-xs hover:underline inline-flex items-center gap-1">
+            <span>Verified Place</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          </a>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-outline-header uppercase tracking-wider">
+          CUSTOMER REVIEWS
+        </h2>
+        <p class="text-xs text-gray-600 mt-1 max-w-xl mx-auto">
+          Verified diner reviews from our Google Maps listing at Murli Nagar, Karond, Bhopal
+        </p>
+      </div>
+
+      <!-- Testimonial Cards Carousel Container -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="reviewCardsGrid">
+        
+        <!-- Review 1 -->
+        <article class="bg-[#DFD5C6] p-6 sm:p-8 rounded-xl shadow-sm space-y-4 border border-stone-300/70 transition-all duration-300 hover:shadow-md">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-brand-red text-white flex items-center justify-center text-xl font-black shadow border-2 border-brand-yellow shrink-0">
+              AS
+            </div>
+            <div>
+              <h4 class="font-extrabold text-gray-900 text-sm sm:text-base">Aman Sharma</h4>
+              <p class="text-[11px] text-gray-600 font-medium">Local Guide &bull; Google Maps Verified</p>
+              <div class="flex text-amber-500 text-xs mt-0.5">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-gray-700 leading-relaxed italic">
+            "Hands down the best pizza in Karond, Bhopal! The crust is freshly prepared with crispy golden edges. Loaded with 100% real mozzarella cheese, and the Schezwan Paneer Pizza with Stuffed Garlic Bread is an absolute must-try. Fast, polite service and great dining vibe!"
+          </p>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="bg-[#DFD5C6] p-6 sm:p-8 rounded-xl shadow-sm space-y-4 border border-stone-300/70 transition-all duration-300 hover:shadow-md">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full bg-brand-darkred text-white flex items-center justify-center text-xl font-black shadow border-2 border-brand-yellow shrink-0">
+              PS
+            </div>
+            <div>
+              <h4 class="font-extrabold text-gray-900 text-sm sm:text-base">Priya Soni</h4>
+              <p class="text-[11px] text-gray-600 font-medium">Bhopal Resident &bull; Google Maps Review</p>
+              <div class="flex text-amber-500 text-xs mt-0.5">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-gray-700 leading-relaxed italic">
+            "Incredible taste at very pocket-friendly prices! We ordered the Farmhouse Pizza, Veg Supreme, and Stuffed Garlic Bread. Everything was served piping hot and dripping with cheese. 100% recommended for dining with family and friends!"
+          </p>
+        </article>
+
+      </div>
+
+      <!-- Interactive Pagination Dots -->
+      <div class="flex justify-center items-center gap-2 mt-8">
+        <button onclick="setReviewSlide(0)" id="revDot0" class="w-3 h-3 rounded-full bg-brand-yellow shadow transition" aria-label="Review page 1"></button>
+        <button onclick="setReviewSlide(1)" id="revDot1" class="w-3 h-3 rounded-full bg-stone-300 hover:bg-stone-400 transition" aria-label="Review page 2"></button>
+        <button onclick="setReviewSlide(2)" id="revDot2" class="w-3 h-3 rounded-full bg-stone-300 hover:bg-stone-400 transition" aria-label="Review page 3"></button>
+      </div>
+
+      <!-- Google Maps Link & WhatsApp Table Booking Banner -->
+      <div class="mt-12 p-6 sm:p-8 bg-[#D3C7B5] rounded-2xl border border-stone-300 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left space-y-1">
+          <div class="flex items-center justify-center md:justify-start gap-2 text-brand-darkred font-black text-xs uppercase tracking-wider">
+            <i class="fa-solid fa-location-dot text-brand-red"></i>
+            <span>Murli Nagar, Karond, Bhopal, MP 462038</span>
+          </div>
+          <h3 class="text-lg sm:text-xl font-black text-gray-900 uppercase">
+            Loved our Pizzas? Share your review or book a table!
+          </h3>
+          <p class="text-xs text-gray-700">
+            Send an instant table reservation on WhatsApp or read more reviews directly on Google Maps.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+          <!-- WhatsApp Booking Button -->
+          <a href="https://wa.me/919111111086?text=Hello!%20I%20would%20like%20to%20book%20a%20table%20at%20Pizza%20Peddler%20Karond%20Bhopal." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-black uppercase px-5 py-3 rounded-xl shadow transition active:scale-95">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>WhatsApp Table (9111111086)</span>
+          </a>
+
+          <!-- Google Maps Button -->
+          <a href="https://maps.app.goo.gl/VypVAhTxhDHVCJaW6?g_st=aw" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-100 text-gray-800 text-xs font-bold uppercase px-5 py-3 rounded-xl border border-stone-300 shadow-sm transition active:scale-95">
+            <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+            <span>View on Google Maps</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- END: CustomerReviews -->
+
+  <!-- BEGIN: Footer -->
+  <footer class="bg-brand-darker text-white pt-16 pb-8 px-6 md:px-12 torn-footer-top relative mt-auto" data-purpose="site-footer">
+    <div class="max-w-6xl mx-auto relative z-10">
+      
+      <!-- Top Columns Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-neutral-800">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 text-xl font-black uppercase">
+            <span class="text-brand-yellow"><i class="fa-solid fa-crown"></i></span>
+            <span>KING<span class="text-brand-yellow">FOOD</span></span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            Authentic wood-fired sourdough atelier, hand-stretched daily with organic stoneground flours and premium imported Italian ingredients.
+          </p>
+          <div class="text-xs space-y-2 text-gray-400 pt-1">
+            <div>
+              <p class="text-[10px] uppercase font-bold tracking-wider text-gray-400">WhatsApp Table Booking</p>
+              <a href="https://wa.me/919111111086?text=Hello!%20I%20would%20like%20to%20book%20a%20table%20at%20Pizza%20Peddler%20Karond%20Bhopal." target="_blank" rel="noopener noreferrer" class="text-[#25D366] font-bold text-sm hover:underline inline-flex items-center gap-1.5">
+                <i class="fa-brands fa-whatsapp text-base"></i> +91 91111 11086
+              </a>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase font-bold tracking-wider text-gray-400">Phone Inquiry</p>
+              <a href="tel:+919111111086" class="text-white font-bold text-sm hover:text-brand-yellow transition inline-flex items-center gap-1.5">
+                <i class="fa-solid fa-phone text-xs text-brand-yellow"></i> +91 91111 11086
+              </a>
+            </div>
+            <div class="pt-1">
+              <p class="text-[10px] uppercase font-bold tracking-wider text-gray-400">Location</p>
+              <p class="text-gray-300">
+                Murli Nagar, Karond,<br>Bhopal, Madhya Pradesh 462038
+              </p>
+              <a href="https://maps.app.goo.gl/VypVAhTxhDHVCJaW6?g_st=aw" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-brand-yellow hover:underline text-xs font-bold mt-1">
+                <i class="fa-solid fa-location-dot"></i> View on Google Maps &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Useful Links -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-extrabold uppercase tracking-widest text-white border-b border-neutral-800 pb-2">Experience</h4>
+          <ul class="text-xs space-y-2 text-gray-400">
+            <li><a class="hover:text-brand-yellow transition" href="#home">Home</a></li>
+            <li><a class="hover:text-brand-yellow transition" href="#about">Our Sourdough Philosophy</a></li>
+            <li><a class="hover:text-brand-yellow transition" href="#popular">Popular Pizzas</a></li>
+            <li><a class="hover:text-brand-yellow transition" href="#menu">Pizzas &amp; Drinks Menu</a></li>
+            <li><a class="hover:text-brand-yellow transition" href="#reviews">Guest Reviews</a></li>
+            <li><button onclick="openGalleryModal()" class="hover:text-brand-yellow transition text-left">Kitchen Gallery</button></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Opening Hours -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-extrabold uppercase tracking-widest text-white border-b border-neutral-800 pb-2">Opening Hours</h4>
+          <ul class="text-xs space-y-2 text-gray-400 font-medium">
+            <li class="flex justify-between"><span class="text-white">Mon - Thu:</span> 11am - 10pm</li>
+            <li class="flex justify-between bg-red-950/40 p-1 rounded text-amber-200"><span class="text-white font-bold">Fri (Vinyl Session):</span> 11am - 12am</li>
+            <li class="flex justify-between"><span class="text-white">Sat - Sun:</span> 11am - 11pm</li>
+          </ul>
+          <div class="p-2.5 rounded bg-neutral-900 border border-neutral-800 text-[11px] text-green-400 font-semibold flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+            Wood Hearth Lit &bull; Open for Dine-In
+          </div>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-extrabold uppercase tracking-widest text-white border-b border-neutral-800 pb-2">Chef Tasting Events</h4>
+          <p class="text-[11px] text-gray-400">Subscribe for seasonal menu previews, guest chef residencies, and special tasting invitations.</p>
+          <form class="flex flex-col gap-2 mt-2" onsubmit="handleNewsletter(event)">
+            <input id="newsletterEmail" class="w-full text-xs bg-neutral-900 border border-neutral-700 text-white placeholder-gray-500 px-3 py-2.5 rounded focus:outline-none focus:border-brand-yellow" placeholder="Your email address" required="" type="email">
+            <button class="bg-brand-yellow hover:bg-brand-yellowHover text-black text-xs font-black uppercase py-2.5 px-4 rounded transition flex items-center justify-center gap-1.5 shadow active:scale-95" type="submit">
+              <i class="fa-solid fa-paper-plane text-[10px]"></i> Subscribe
+            </button>
+          </form>
+          <p class="text-[9px] text-gray-500">*By subscribing you accept our <a class="underline hover:text-brand-yellow" href="#">Privacy Policy</a>. No spam ever.</p>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>© 2026 KINGFOOD Artisan Pizzeria &amp; Atelier. All rights reserved.</p>
+        
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4 text-sm text-gray-400">
+          <a class="hover:text-brand-yellow transition" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a class="hover:text-brand-yellow transition" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a class="hover:text-brand-yellow transition" href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+
+        <!-- Back to Top Link -->
+        <a class="flex items-center gap-1 text-gray-400 hover:text-brand-yellow transition font-bold text-xs" href="#home">
+          <span>↑</span> Back to Top
+        </a>
+      </div>
+
+    </div>
+  </footer>
+  <!-- END: Footer -->
+
+  <!-- ======================================================== -->
+  <!-- MODALS (Table Reservation, Dish Details, Gallery)       -->
+  <!-- ======================================================== -->
+
+  <!-- 1. TABLE RESERVATION MODAL -->
+  <dialog id="reserveModal" class="rounded-2xl p-0 bg-brand-dark text-white border border-neutral-700 shadow-2xl max-w-md w-[90%] overflow-hidden">
+    <div class="p-6">
+      <div class="flex justify-between items-center border-b border-neutral-800 pb-3 mb-4">
+        <h3 class="text-base font-black uppercase text-white flex items-center gap-2">
+          <i class="fa-solid fa-calendar-check text-brand-yellow"></i> Reserve a Table
+        </h3>
+        <button onclick="closeReserveModal()" class="text-gray-400 hover:text-white text-xl p-1" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-gray-300 mb-4 leading-relaxed">
+        Experience our wood-fired sourdough atelier and intimate candlelit dining in Bhopal. Reserve your table below or call us directly:
+      </p>
+
+      <form onsubmit="handleReservationSubmit(event)" class="space-y-3.5 text-xs">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-gray-300 uppercase font-bold mb-1">Date:</label>
+            <input required type="date" id="resDate" class="w-full bg-neutral-800 border border-neutral-700 rounded p-2 text-white focus:outline-none focus:border-brand-yellow">
+          </div>
+          <div>
+            <label class="block text-gray-300 uppercase font-bold mb-1">Time Slot:</label>
+            <select id="resTime" class="w-full bg-neutral-800 border border-neutral-700 rounded p-2 text-white focus:outline-none focus:border-brand-yellow">
+              <option value="12:30 PM">12:30 PM (Lunch)</option>
+              <option value="2:00 PM">2:00 PM (Lunch)</option>
+              <option value="6:30 PM" selected>6:30 PM (Evening)</option>
+              <option value="8:00 PM">8:00 PM (Dinner)</option>
+              <option value="9:30 PM">9:30 PM (Late Session)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-gray-300 uppercase font-bold mb-1">Guests:</label>
+            <select id="resGuests" class="w-full bg-neutral-800 border border-neutral-700 rounded p-2 text-white focus:outline-none focus:border-brand-yellow">
+              <option value="1 Person">1 Guest</option>
+              <option value="2 People" selected>2 Guests</option>
+              <option value="3-4 People">3 - 4 Guests</option>
+              <option value="5-8 People">5 - 8 Guests</option>
+              <option value="Party (8+)">Large Party (8+)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-300 uppercase font-bold mb-1">Your Name:</label>
+            <input required type="text" id="resName" placeholder="Full Name" class="w-full bg-neutral-800 border border-neutral-700 rounded p-2 text-white focus:outline-none focus:border-brand-yellow">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-gray-300 uppercase font-bold mb-1">Contact Phone:</label>
+          <input required type="tel" id="resPhone" placeholder="+91 98765 43210" class="w-full bg-neutral-800 border border-neutral-700 rounded p-2 text-white focus:outline-none focus:border-brand-yellow">
+        </div>
+
+        <button type="submit" class="w-full bg-[#25D366] hover:bg-[#20ba59] text-white font-black text-xs uppercase py-3.5 rounded-lg shadow-lg transition active:scale-95 flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Send Booking via WhatsApp (9111111086)</span>
+        </button>
+
+        <div class="pt-2 text-center space-y-1.5">
+          <span class="text-[11px] text-gray-400">Direct booking &amp; inquiries:</span>
+          <div class="flex items-center justify-center gap-3">
+            <a href="https://wa.me/919111111086?text=Hello!%20I%20would%20like%20to%20reserve%20a%20table%20at%20Pizza%20Peddler%20Karond%20Bhopal." target="_blank" rel="noopener noreferrer" class="font-bold text-[#25D366] text-xs hover:underline inline-flex items-center gap-1">
+              <i class="fa-brands fa-whatsapp"></i> Chat: 9111111086
+            </a>
+            <span class="text-gray-600">|</span>
+            <a href="tel:+919111111086" class="font-bold text-brand-yellow text-xs hover:underline inline-flex items-center gap-1">
+              <i class="fa-solid fa-phone"></i> Call: +91 91111 11086
+            </a>
+          </div>
+          <p class="text-[10px] text-gray-400 pt-1">
+            📍 Murli Nagar, Karond, Bhopal, MP 462038
+          </p>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- 2. DISH DETAILS MODAL -->
+  <dialog id="dishModal" class="rounded-2xl p-0 bg-brand-dark text-white border border-neutral-700 shadow-2xl max-w-sm w-[90%] overflow-hidden">
+    <div class="p-6">
+      <div class="flex justify-between items-center border-b border-neutral-800 pb-3 mb-4">
+        <h3 class="text-base font-black uppercase text-white flex items-center gap-2">
+          <i class="fa-solid fa-pizza-slice text-brand-yellow"></i> Culinary Profile
+        </h3>
+        <button onclick="closeDishModal()" class="text-gray-400 hover:text-white text-xl p-1" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="text-center py-2 space-y-2">
+        <span class="text-[10px] uppercase font-extrabold tracking-widest text-amber-300">Artisanal Sourdough Creation</span>
+        <h4 id="dishDetailName" class="text-xl font-black text-white">Pizza Margherita</h4>
+        <div class="inline-block bg-neutral-800 px-3 py-1 rounded-full text-brand-yellow font-black text-sm border border-neutral-700" id="dishDetailPrice">&#8377;160</div>
+        <p class="text-xs text-gray-300 max-w-xs mx-auto pt-2 leading-relaxed" id="dishDetailDesc">
+          San Marzano tomato passata, creamy Fior di Latte mozzarella, fragrant fresh sweet basil, and organic extra virgin olive oil.
+        </p>
+      </div>
+
+      <div class="mt-5 p-3 rounded bg-neutral-900 border border-neutral-800 space-y-1.5 text-xs text-gray-400">
+        <div class="flex justify-between"><span class="text-gray-400">Fermentation:</span> <span class="text-white font-bold">48-Hour Cold Biga</span></div>
+        <div class="flex justify-between"><span class="text-gray-400">Flour:</span> <span class="text-white font-bold">Organic Italian Tipo 00</span></div>
+        <div class="flex justify-between"><span class="text-gray-400">Oven Temperature:</span> <span class="text-brand-yellow font-bold">900°F (Oak Wood)</span></div>
+      </div>
+
+      <button onclick="closeDishModal(); openReserveModal();" class="mt-4 w-full bg-brand-yellow hover:bg-brand-yellowHover text-black font-black text-xs uppercase py-3 rounded-lg shadow-lg transition flex items-center justify-center gap-2">
+        <i class="fa-solid fa-calendar-check"></i>
+        <span>Book Table to Taste</span>
+      </button>
+    </div>
+  </dialog>
+
+  <!-- 3. KITCHEN GALLERY MODAL -->
+  <dialog id="galleryModal" class="rounded-2xl p-0 bg-brand-dark text-white border border-neutral-700 shadow-2xl max-w-2xl w-[95%] overflow-hidden">
+    <div class="p-6">
+      <div class="flex justify-between items-center border-b border-neutral-800 pb-3 mb-4">
+        <h3 class="text-base font-black uppercase text-white flex items-center gap-2">
+          <i class="fa-solid fa-camera-retro text-brand-yellow"></i> Wood-Fired Hearth &amp; Dining Gallery
+        </h3>
+        <button onclick="closeGalleryModal()" class="text-gray-400 hover:text-white text-xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <img class="w-full h-32 object-cover rounded-lg hover:scale-105 transition" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" alt="Wood fired pizza">
+        <img class="w-full h-32 object-cover rounded-lg hover:scale-105 transition" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=400&q=80" alt="Fresh artisan dough">
+        <img class="w-full h-32 object-cover rounded-lg hover:scale-105 transition" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80" alt="Gourmet toppings">
+        <img class="w-full h-32 object-cover rounded-lg hover:scale-105 transition" src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=400&q=80" alt="Neapolitan oven flame">
+        <img class="w-full h-32 object-cover rounded-lg hover:scale-105 transition" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80" alt="Restaurant dining tables">
+        <img class="w-full h-32 object-cover rounded-lg hover:scale-105 transition" src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=400&q=80" alt="Artisanal slice">
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Floating WhatsApp Booking Button -->
+  <a href="https://wa.me/919111111086?text=Hello!%20I%20would%20like%20to%20book%20a%20table%20at%20Pizza%20Peddler%20Karond%20Bhopal." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-extrabold px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 group border-2 border-white/40" title="Book Table via WhatsApp (9111111086)" aria-label="Book Table on WhatsApp">
+    <i class="fa-brands fa-whatsapp text-2xl group-hover:rotate-12 transition-transform"></i>
+    <span class="text-xs uppercase tracking-wider hidden sm:inline font-black">Book Table (9111111086)</span>
+  </a>
+
+  <!-- 4. TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="fixed bottom-20 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- ======================================================== -->
+  <!-- JAVASCRIPT: Showcase Application Logic                   -->
+  <!-- ======================================================== -->
+  <script>
+    // Table Reservation Modal
+    function openReserveModal() {
+      // Set default date to today
+      const today = new Date().toISOString().split('T')[0];
+      const dateInput = document.getElementById('resDate');
+      if (dateInput && !dateInput.value) {
+        dateInput.value = today;
+      }
+      document.getElementById('reserveModal').showModal();
+    }
+
+    function closeReserveModal() {
+      document.getElementById('reserveModal').close();
+    }
+
+    function handleReservationSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('resName').value || 'Guest';
+      const phone = document.getElementById('resPhone').value || '';
+      const date = document.getElementById('resDate').value || 'Today';
+      const time = document.getElementById('resTime').value || '7:00 PM';
+      const guests = document.getElementById('resGuests').value || '2 Guests';
+
+      // Preloaded formatted message to send to 9111111086
+      const message = `🍕 *Table Reservation Request*\n\n` +
+        `👤 *Name:* ${name}\n` +
+        `📞 *Contact:* ${phone}\n` +
+        `📅 *Date:* ${date}\n` +
+        `⏰ *Time Slot:* ${time}\n` +
+        `👥 *Number of Guests:* ${guests}\n\n` +
+        `Please confirm table booking at Pizza Peddler Karond, Bhopal. Thank you!`;
+
+      const whatsappUrl = `https://wa.me/919111111086?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      closeReserveModal();
+      showToast(`🎉 Reservation loaded! Opening WhatsApp to send to 9111111086...`);
+    }
+
+    // Dish Detail Modal
+    function openDishDetail(name, price, desc) {
+      document.getElementById('dishDetailName').innerText = name;
+      document.getElementById('dishDetailPrice').innerText = price;
+      document.getElementById('dishDetailDesc').innerText = desc;
+      document.getElementById('dishModal').showModal();
+    }
+
+    function closeDishModal() {
+      document.getElementById('dishModal').close();
+    }
+
+    // Mobile & Tablet Navigation Drawer Toggle
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const backdrop = document.getElementById('mobileNavBackdrop');
+      const isOpen = !nav.classList.contains('translate-x-full');
+
+      if (isOpen) {
+        nav.classList.add('translate-x-full');
+        if (backdrop) backdrop.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      } else {
+        nav.classList.remove('translate-x-full');
+        if (backdrop) backdrop.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+    }
+
+    // Close mobile menu or dialogs on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const nav = document.getElementById('mobileNav');
+        if (nav && !nav.classList.contains('translate-x-full')) {
+          toggleMobileNav();
+        }
+      }
+    });
+
+    // Customer Reviews data for carousel (From Google Maps - Murli Nagar, Karond, Bhopal)
+    const reviewsData = [
+      [
+        {
+          name: "Aman Sharma",
+          role: "Local Guide • Google Maps Verified",
+          initials: "AS",
+          bg: "bg-brand-red",
+          text: "Hands down the best pizza in Karond, Bhopal! The crust is freshly prepared with crispy golden edges. Loaded with 100% real mozzarella cheese, and the Schezwan Paneer Pizza with Stuffed Garlic Bread is an absolute must-try. Fast, polite service and great dining vibe!"
+        },
+        {
+          name: "Priya Soni",
+          role: "Bhopal Resident • Google Maps Review",
+          initials: "PS",
+          bg: "bg-brand-darkred",
+          text: "Incredible taste at very pocket-friendly prices! We ordered the Farmhouse Pizza, Veg Supreme, and Stuffed Garlic Bread. Everything was served piping hot and dripping with cheese. 100% recommended for dining with family and friends!"
+        }
+      ],
+      [
+        {
+          name: "Deepak Vishwakarma",
+          role: "Food Enthusiast • Murli Nagar, Bhopal",
+          initials: "DV",
+          bg: "bg-amber-700",
+          text: "Found this gem near Murli Nagar, Karond and it has become our regular hangout spot. Real mozzarella cheese, fresh veggies, and very hygienic preparation. Booking a table via WhatsApp was seamless and quick!"
+        },
+        {
+          name: "Neha Patel",
+          role: "Local Guide • Google Maps Review",
+          initials: "NP",
+          bg: "bg-emerald-700",
+          text: "5 stars without a doubt! Outstanding quality and taste that beats major commercial chains. The Peri Peri Paneer Pizza and Fresh Lime Soda combo is top-notch. Staff is very humble and polite."
+        }
+      ],
+      [
+        {
+          name: "Vikram Rajput",
+          role: "Bhopal Resident • Google Maps Review",
+          initials: "VR",
+          bg: "bg-indigo-700",
+          text: "Super fresh ingredients and the cheese burst crust is simply heavenly. Perfectly baked pizzas with generous toppings. Best place in Karond Bhopal for true pizza lovers!"
+        },
+        {
+          name: "Pooja Verma",
+          role: "Google Maps Verified Diner",
+          initials: "PV",
+          bg: "bg-rose-700",
+          text: "Celebrated my brother's birthday here! The ambience is cozy, the pizza dough is delightfully fresh, and the staff took special care of our table reservation on WhatsApp. Loved every slice!"
+        }
+      ]
+    ];
+
+    // Reviews Carousel Slide
+    let currentRevSlide = 0;
+    function setReviewSlide(slideIndex) {
+      currentRevSlide = slideIndex;
+      const grid = document.getElementById('reviewCardsGrid');
+      const data = reviewsData[slideIndex];
+
+      [0, 1, 2].forEach(i => {
+        const dot = document.getElementById(`revDot${i}`);
+        if (i === slideIndex) {
+          dot.className = 'w-3 h-3 rounded-full bg-brand-yellow shadow transition';
+        } else {
+          dot.className = 'w-3 h-3 rounded-full bg-stone-300 hover:bg-stone-400 transition';
+        }
+      });
+
+      grid.innerHTML = data.map(rev => `
+        <article class="bg-[#DFD5C6] p-6 sm:p-8 rounded-xl shadow-sm space-y-4 border border-stone-300/70 transition-all duration-300 hover:shadow-md">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-full ${rev.bg} text-white flex items-center justify-center text-xl font-black shadow border-2 border-brand-yellow shrink-0">
+              ${rev.initials}
+            </div>
+            <div>
+              <h4 class="font-extrabold text-gray-900 text-sm sm:text-base">${rev.name}</h4>
+              <p class="text-[11px] text-gray-600 font-medium">${rev.role}</p>
+              <div class="flex text-amber-500 text-xs mt-0.5">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-gray-700 leading-relaxed italic">
+            "${rev.text}"
+          </p>
+        </article>
+      `).join('');
+    }
+
+    // Menu Filtering
+    function filterMenu(category) {
+      document.querySelectorAll('.menu-tab-btn').forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.className = 'menu-tab-btn active bg-brand-yellow text-black text-xs font-black uppercase px-4 py-2 rounded-full transition';
+        } else {
+          btn.className = 'menu-tab-btn bg-neutral-800 hover:bg-neutral-700 text-gray-300 text-xs font-bold uppercase px-4 py-2 rounded-full transition';
+        }
+      });
+
+      document.querySelectorAll('.menu-category-box').forEach(box => {
+        const group = box.getAttribute('data-category-group');
+        if (category === 'all' || category === group) {
+          box.style.display = 'block';
+        } else {
+          box.style.display = 'none';
+        }
+      });
+    }
+
+    // Menu Live Search
+    function searchMenu(query) {
+      const q = query.toLowerCase().trim();
+      document.querySelectorAll('.menu-row').forEach(row => {
+        const name = row.getAttribute('data-name').toLowerCase();
+        if (name.includes(q)) {
+          row.style.display = 'flex';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    // Gallery Modal
+    function openGalleryModal() {
+      document.getElementById('galleryModal').showModal();
+    }
+    function closeGalleryModal() {
+      document.getElementById('galleryModal').close();
+    }
+
+    // Newsletter Feedback
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletterEmail').value;
+      showToast(`✨ Thank you! Tasting invitations and seasonal menu previews will be sent to ${email}`);
+      document.getElementById('newsletterEmail').value = '';
+    }
+
+    // Modern Toast Notification
+    function showToast(message) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'bg-brand-dark text-white border-l-4 border-brand-yellow px-4 py-3 rounded shadow-2xl text-xs font-bold flex items-center gap-3 transform translate-y-4 opacity-0 transition-all duration-300 pointer-events-auto max-w-sm';
+      toast.innerHTML = `
+        <i class="fa-solid fa-bell text-brand-yellow text-sm"></i>
+        <span class="flex-1">${message}</span>
+        <button onclick="this.parentElement.remove()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+      `;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+      }, 10);
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-4', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+  </script>
+</body>
+</html>
